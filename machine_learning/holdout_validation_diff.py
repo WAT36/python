@@ -47,7 +47,7 @@ plt.ylim(min(min(sd_train),min(sd_test))-1,max(max(sd_train),max(sd_test))+1)
 
 plt.plot(M,sd_train,'-',color='blue',label='SD_train')
 plt.plot(M,sd_test,'-',color='red',label='SD_test')
-plt.legend(loc='higher left')
+plt.legend(loc='upper left')
 
 plt.grid(True)
 plt.show()
