@@ -36,28 +36,21 @@ for i in range(len(M)):
     #訓練データでw,y算出
     w_train = design_matrix(x_train,t_train,mu,1)
     y_test = linear_basis_func(w_train,x_test,mu,1)
-    y_train = linear_basis_func(w_train,x_train,mu,1)
 
-    #入力値xを(yを対応づけたまま)ソート
-    xy_test=[[x_test[i],y_test[i]] for i in range(len(x_test))]
-    xy_test.sort(key=lambda a:a[0])
-    xi_test,yi_test=zip(*xy_test)
-
-    xy_train=[[x_train[i],y_train[i]] for i in range(len(x_train))]
-    xy_train.sort(key=lambda a:a[0])
-    xi_train,yi_train=zip(*xy_train)
-
-    #標準偏差SD
+    #標準偏差SD算出
     sd = math.sqrt(mse(y_test,t_test))
+
+    #予測式を細かく表示させるためのデータ作成
+    x_forplot = np.linspace(min(x_train),max(x_train),1000)
+    y_forplot = linear_basis_func(w_train,x_forplot,mu,1)
 
     #プロット
     plt.scatter(x_train,t_train,c='white',label='train',edgecolors="black")
     plt.scatter(x_test,t_test,c='green',label='test')
     plt.xlim(min(x)-1,max(x)+1)
-    plt.ylim(min(t)-1,max(t)+1)
+    plt.ylim(min(t)-1,max(t)+10)
 
-    plt.plot(xi_test,yi_test,'-',color='red',label='y_test')
-    plt.plot(xi_train,yi_train,'-',alpha=0.5,color='blue',label='y_train')
+    plt.plot(x_forplot,y_forplot,'-',color='red',label='y_train')
     plt.legend(loc='lower right')
     plt.title("M={0:d}, SD={1:.2f}".format(m,sd))
 
