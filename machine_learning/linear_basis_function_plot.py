@@ -27,10 +27,9 @@ for i in range(len(M)):
     w=design_matrix(x,t,mu,1)
     y=linear_basis_func(w,x,mu,1)
 
-    #入力値xを(yを対応づけたまま)ソート
-    xy=[[x[i],y[i]] for i in range(len(x))]
-    xy.sort(key=lambda a:a[0])
-    xi,yi=zip(*xy)
+    #予測式を細かく表示させるためのデータ作成
+    x_forplot = np.linspace(min(x),max(x),1000)
+    y_forplot = linear_basis_func(w,x_forplot,mu,1)
 
     #標準偏差SD
     sd = math.sqrt(mse(y,t))
@@ -40,7 +39,7 @@ for i in range(len(M)):
     plt.xlim(min(x)-1,max(x)+1)
     plt.ylim(min(t)-1,max(t)+1)
 
-    plt.plot(xi,yi,'-',color='red',label='y')
+    plt.plot(x_forplot,y_forplot,'-',color='red',label='y')
     plt.legend(loc='lower right')
     plt.title("M={0:d}, SD={1:.2f}".format(m,sd))
 
