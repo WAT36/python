@@ -12,20 +12,20 @@ k = len(x)
 #m
 M = range(1,10)
 
-mse_train=np.zeros(len(M))
-mse_test=np.zeros(len(M))
+train=np.zeros(len(M))
+test=np.zeros(len(M))
 
 for i in range(len(M)):
     train_i,test_i=k_hold_cross_validation(x,t,M[i],k)
-    mse_train[i]=np.sqrt(np.mean(train_i))
-    mse_test[i]=np.sqrt(np.mean(test_i))
+    train[i]=np.sqrt(np.mean(train_i))
+    test[i]=np.sqrt(np.mean(test_i))
 
 
 plt.xlim(min(M)-1,max(M)+1)
-plt.ylim(min(min(mse_train),min(mse_test))-1,max(max(mse_train),max(mse_test))+1)
+plt.ylim(min(min(train),min(test))-1,max(max(train),max(test))+1)
 
-plt.plot(M,mse_test,color='red',label='test')
-plt.plot(M,mse_train,color='blue',label='train')
+plt.plot(M,test,color='red',label='test')
+plt.plot(M,train,color='blue',label='train')
 plt.legend(loc='lower left')
 
 plt.grid(True)
