@@ -28,7 +28,6 @@ for i in range(len(w)):
         ans_x=np.max(ans_x)
     else:
         ans_x=np.min(ans_x)
-    print(ans_x)
     ans_x=[x[ans_x]]*2
     ans_y=[-2,3]
     plt.plot(ans_x,ans_y,color='black',linestyle='--')
