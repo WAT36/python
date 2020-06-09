@@ -29,22 +29,14 @@ for i0 in range(n):
 
 
 #可視化
-plt.figure(figsize=(10,5))
-ax = plt.subplot(1,2,1,projection='3d')
-plt.subplots_adjust(wspace=0.5)
+plt.figure(figsize=(7,7))
+ax = plt.subplot(1,1,1,projection='3d')
 ax.plot_surface(xx0,xx1,g,color='blue',edgecolor='black',rstride=10,cstride=10,alpha=0.4)
 ax.set_xlabel('$w_0$',fontsize=14)
 ax.set_ylabel('$w_1$',fontsize=14)
 ax.set_xlim(min_x,max_x)
 ax.set_ylim(min_x,max_x)
 ax.set_zlim(0,10)
-
-plt.subplot(1,2,2)
-cont = plt.contour(xx0,xx1,g,20,colors='black',levels=[0.25,0.5,1,1.5,2])
-cont.clabel(fmt='%1.1f',fontsize=8)
-plt.xlabel('$w_0$',fontsize=14)
-plt.ylabel('$w_1$',fontsize=14)
-plt.xlim(min_x,max_x)
 
 plt.grid(True)
 plt.show()
