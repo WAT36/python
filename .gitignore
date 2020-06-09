@@ -1,0 +1,5 @@
+machine_learning/__pycache__/k_hold_cross_validation.cpython-37.pyc
+machine_learning/__pycache__/linear_basis_function.cpython-37.pyc
+machine_learning/classification/__pycache__/cross_entropy_error.cpython-37.pyc
+machine_learning/classification/__pycache__/logistic_regression.cpython-37.pyc
+machine_learning/classification/__pycache__/sigmoid.cpython-37.pyc
