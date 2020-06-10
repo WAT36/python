@@ -15,4 +15,5 @@ x = np.load('x.npy')
 t = np.load('t.npy')
 
 w_ans=cee_solve(w_init,x,t)
-print(w_ans)
+print("w0:{0}".format(w_ans[0]))
+print("w1:{0}".format(w_ans[1]))
