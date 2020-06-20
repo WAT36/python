@@ -1,5 +1,5 @@
-import numpy as np
 from logistic_regression_2d import logistic_regression_2d
+import numpy as np
 
 #交差エントロピー誤差
 def cross_entropy_error_2d(w,x,t):
