@@ -1,4 +1,6 @@
+from scipy.optimize import minimize
 import numpy as np
+
 
 #ロジスティック回帰モデル(２次元入力３クラス分類)
 def logistic_regression_2d_3class(w,x):
@@ -46,6 +48,9 @@ def d_cee_for_2d_3class(w,x,t):
     d_cee = d_cee / N
     return d_cee
 
-
+#勾配法
+def fit_2d_3class(w,x,t):
+    result = minimize(cross_entropy_error_for_2d_3class,w,args=(x,t),jac=d_cee_for_2d_3class,method="CG")
+    return result.x
 
 
