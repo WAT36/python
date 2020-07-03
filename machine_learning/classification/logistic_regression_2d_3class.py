@@ -15,3 +15,22 @@ def logistic_regression_2d_3class(w,x):
     return y
 
 
+#平均交差エントロピー誤差（２次元入力３クラス分類用）
+def cross_entropy_error_for_2d_3class(w,x,t):
+    #w:3*3行列
+    #x:n*2行列（xの転置）
+    #t:n*3行列（t[i]がクラスkにb分類された時t[i.k]=1,それ以外は0）
+    y=logistic_regression_2d_3class(w,x)
+    N=y.shape[0]
+    #cee:平均交差エントロピー誤差
+    cee=0
+    for n in range(N):
+        for k in range(3):
+            cee = cee - (t[n,k] * np.log(y[n,k]))
+    cee = cee / N
+    return cee
+
+
+
+
+
