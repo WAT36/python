@@ -6,6 +6,11 @@ import sys
 
 #入力ファイル名と出力ファイル名を引数にとる
 files=sys.argv
+
+if len(files) != 3:
+    print("Error. Argument is no valid. Usage:python newline_to_n.py [inputfile] [outputfile]")
+    sys.exit(1)
+
 input_file=files[1]
 output_file=files[2]
 
