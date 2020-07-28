@@ -23,11 +23,6 @@ with open(input_file,'r') as f:
         indata=fline
         indata=indata.replace('\n','¥n')
         indata=indata.replace("'",'_')
-        indata=indata.replace('(A)','¥n(A)')
-        indata=indata.replace('(B)','¥n(B)')
-        indata=indata.replace('(C)','¥n(C)')
-        indata=indata.replace('(D)','¥n(D)')
-        print(indata)
         if(indata=="---¥n"):
             sentences.append(sentence_i)
             sentence_i=""
