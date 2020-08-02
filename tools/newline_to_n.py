@@ -16,7 +16,7 @@ output_file=files[2]
 
 #"---"を境として、その間の内容を１行となるようにして読み取る
 indata=""
-sentence_i=""
+sentence_i="¥n"
 sentences=[]
 with open(input_file,'r') as f:
     for fline in f:
@@ -25,12 +25,12 @@ with open(input_file,'r') as f:
         indata=indata.replace("'",'_')
         if(indata=="---¥n"):
             sentences.append(sentence_i)
-            sentence_i=""
+            sentence_i="¥n"
         else:
             sentence_i+=indata
     else:
         sentences.append(sentence_i)
-        sentence_i=""
+        sentence_i="¥n"
 
 #読み取った内容を１行ずつ書き込む
 with open(output_file,'w') as f:
