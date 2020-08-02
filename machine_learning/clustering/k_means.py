@@ -5,6 +5,20 @@ x=[]
 mu=[]
 R=[]
 
+def distortion_measure(x,mu,r):
+    #クラスタ数
+    k=r.shape[1]
+    #歪み尺度
+    J=0
+    #計算
+    for i in range(k):
+        xi=x[r[:,i]==1]
+        for j in range(xi.shape[0]):
+            J+=(xi[j][0]-mu[i][0])**2 +(xi[j][1]-mu[i][1])**2
+    
+    return J
+
+
 #R計算
 def calc_r(X,Mu):
 
@@ -41,8 +55,12 @@ def calc_r(X,Mu):
             mu_iy=np.mean(x_i[:,1])
             mu[i]=np.array([mu_ix,mu_iy])
         
-        count+=1
-    
+        ##この部分を新規追加 学習終了後に歪み尺度を計算して表示
+        J=distortion_measure(x,mu,R)
+        print("学習{0}回目,歪み尺度:{1}".format(count,J))
+
+        count+=1    
+
     return mu,R
 
 
