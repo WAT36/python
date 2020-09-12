@@ -1,12 +1,2 @@
-machine_learning/__pycache__/k_hold_cross_validation.cpython-37.pyc
-machine_learning/__pycache__/linear_basis_function.cpython-37.pyc
-machine_learning/classification/__pycache__/cross_entropy_error.cpython-37.pyc
-machine_learning/classification/__pycache__/logistic_regression.cpython-37.pyc
-machine_learning/classification/__pycache__/sigmoid.cpython-37.pyc
-machine_learning/classification/__pycache__/cross_entropy_error_2d.cpython-37.pyc
-machine_learning/classification/__pycache__/d_cee.cpython-37.pyc
-machine_learning/classification/__pycache__/d_cee_2d.cpython-37.pyc
-machine_learning/classification/__pycache__/fit_2d_2class.cpython-37.pyc
-machine_learning/classification/__pycache__/logistic_regression_2d.cpython-37.pyc
-machine_learning/classification/__pycache__/plot_2d_2class.cpython-37.pyc
-machine_learning/classification/__pycache__/surface_plot_2d_2class_logistic.cpython-37.pyc
+*.pyc
+*.checkpoint.ipynb
