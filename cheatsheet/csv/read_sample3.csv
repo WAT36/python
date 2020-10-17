@@ -1,0 +1,10 @@
+index,name,yen,stock,weight
+1,apple,120,200,50
+2,banana,100,300,30
+3,,80,400,30
+4,grape,100,100,
+5,lemon,50,,20
+6,,70,200,20
+7,melon,,50,100
+8,strawberry,10,500,10
+9,durian,,20,100
