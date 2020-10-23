@@ -1,5 +1,5 @@
-index,name,yen,weight
-1,apple,120,50
-2,banana,100,30
-3,orange,80,30
-4,grape,100,40
+index,yen,weight
+1,120,50
+2,100,30
+3,80,30
+4,100,40
