@@ -37,4 +37,3 @@ def rec(S,v,r):
 
 ans,route=rec(0,0,route)
 print("答:{0},経路:{1}".format(ans,route))
-
